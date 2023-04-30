@@ -8,17 +8,15 @@ struct node {
     node *next;
 };
 
-class Queue
-{
+class Queue{
 private:
     /* data */
-    node *front;
-    node *back;
+    node *front, *back;
     int count = 0;
 public:
     Queue() {
-        front = nullptr;
-        back = nullptr;
+        node *front = nullptr;
+        node *back = nullptr;
     };
     
 
@@ -38,31 +36,33 @@ public:
 
     int dequeue() {
         node *current;
+        // node *previous;
         current = front;
         // removes an element from the back of the queue
         // node *backNode;
-        // for(current; current != nullptr; current->next) {
-        //     // if(current == nullptr) {
-        //     //     backNode = current;
-        //     // current = current->next;
-        //     cout << "current: " << current << endl;
-
-        //     }
-        while(current != nullptr) {
+        while(current->next != nullptr) {
             // if(current == nullptr) {
             //     backNode = current;
             // current = current->next;
             
-            // cout << "current: " << current << endl;
+            cout << "current: " << current->data << endl;
+            // previous = current;
             current = current->next;
             }
-        return current->data;
-        // if(current == nullptr) {
-        //     return current->data;
-        //     delete current;
-        // return -1;
+        // return current->data;
+        back = current;
+        // if (current == front) {
+        //     return -1;
         // }
-        
+        if(back->next == nullptr) {
+            return back->data;
+            
+            // previous->next = nullptr;
+            
+            
+        }
+        return -1;
+        // }
     }
 
     int peek() {
@@ -82,7 +82,8 @@ int main() {
     myQueue.enqueue(33);
 
     cout << "dequeue: " << myQueue.dequeue() << endl;
+    cout << "dequeue: " << myQueue.dequeue() << endl;
+    cout << "dequeue: " << myQueue.dequeue() << endl;
     cout << "end program" << endl;
     return 0;
-    
 }
