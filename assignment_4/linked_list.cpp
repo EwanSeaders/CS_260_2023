@@ -28,6 +28,7 @@ public:
         // checks for empty list and sets values = to each other to initialize
         if(front == nullptr && back == nullptr) {
             front = back = current;
+            count += 1;
             return;
         }
         back->next = current;
@@ -62,19 +63,19 @@ public:
         return back->data;
     }
 
-    int print() {
+    void print() {
         node* curr = front;
         while (curr != nullptr) {
             cout << curr->data << ", ";
             curr = curr->next;
         }
-            cout << endl;
+        cout << endl;
     }
     
     int remove(int index) { // removes an element from a specified index
         node* curr = front;
         node* prev = front;
-        if (index <= count) {
+        if (index < count) {
             if (index == 0) {
                 front = front->next;
                 curr->next = nullptr;
@@ -104,21 +105,25 @@ public:
         front = curr;
         count += 1;
     }
-    node* iterate(int index) {
-        // int i = 0;
+    
+    node* iterate(int index) { // iterates throught the list and returns the pointer to the node at specified index
         node* current = front;
-        // if (count <= index <= count) {
-        //     while(i < index) {
-        //         current = current->next;
-        //         i += 1;
-        //     }
-        
-        while (index > 0) {
-                current = current->next;
-                index -= 1;
-        return current;
+        try {
+            if (index > 0) {
+                while (index > 0) {
+                        current = current->next;
+                        index -= 1;
+                }
+            throw 10;
+            }
         }
-        cout << "invalid index" << endl;
+        catch(...) {
+            cout << "invalid index" << endl; 
+        }
+        // if (0 > index | index > count) {
+        //     cout << "invalid index";
+        // }
+        return current;
     }
         
         
@@ -146,6 +151,7 @@ public:
         }
         return -999999;
     }
+    
     int list_len() {
         return count;
     }
@@ -156,6 +162,8 @@ int main() {
     linkedList myList;
     
     myList.enqueue(5);
+    cout << "iterate function: " << myList.iterate(0)->data << endl;
+
     myList.enqueue(4);
     myList.enqueue(3);
     myList.enqueue(2);
@@ -164,25 +172,37 @@ int main() {
     // cout << "remove(0): " << myList.remove(0) << endl;
     cout << "remove(1): " << myList.remove(1) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
 
     cout << "remove(2): " << myList.remove(2) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
 
     cout << "remove(3): " << myList.remove(3) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
 
     cout << "remove(0): " << myList.remove(0) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
 
     cout << "remove(3): " << myList.remove(3) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
 
     cout << "remove(0): " << myList.remove(0) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
+
     cout << "remove(0): " << myList.remove(0) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
+
     cout << "remove(0): " << myList.remove(0) << endl;
     myList.print();
+    cout << "list length: " << myList.list_len() << endl;
+
+    cout << "iterate function: " << myList.get(3) << endl;
     
     
     myList.add0(42);
