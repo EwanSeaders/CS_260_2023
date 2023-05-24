@@ -15,11 +15,7 @@ private:
     node *back = nullptr;
     int count = 0;
 public:
-    // Queue() {
-    //     node *front = nullptr;
-    //     node *back = nullptr;
-    // };
-    
+    // queue functions
     void enqueue(int x) { // adds an element to the back of the queue
         // create a new node (current) and assign it new values
         node* current = new node();
@@ -62,8 +58,8 @@ public:
         }
         return back->data;
     }
-
-    void print() {
+    // linked list helper functions
+    void print() {// prints elements of the list to terminal
         node* curr = front;
         while (curr != nullptr) {
             cout << curr->data << ", ";
@@ -72,32 +68,11 @@ public:
         cout << endl;
     }
     
-    int remove(int index) { // removes an element from a specified index
-        node* curr = front;
-        node* prev = front;
-        if (index < count) {
-            if (index == 0) {
-                front = front->next;
-                curr->next = nullptr;
-                if (count == 0) {
-                    free(front);
-                    count -= 1;
-                }
-            }
-            while (index > 0) {
-                prev = curr;
-                curr = curr->next;
-                index -= 1;
-            }
-            count -= 1;
-            prev->next = curr->next;
-            curr->next = nullptr;
-            return curr->data;  
-        }
-        return -999999;
+    int list_len() {// returns the number of values in the list based on the private count variable
+        return count;
     }
 
-    void add0(int value) {
+    void add0(int value) {// helper for main add finction.  adds a value to index 0
         node* curr = front;
         curr = new node();
         curr->next = front;
@@ -108,8 +83,8 @@ public:
     
     node* iterate(int index) { // iterates throught the list and returns the pointer to the node at specified index
         node* current = front;
-        try {
-            if (index > 0) {
+        try {// starts code to check for errors
+            if (index > 0) {// iterates through list
                 while (index > 0) {
                         current = current->next;
                         index -= 1;
@@ -117,43 +92,60 @@ public:
             throw 10;
             }
         }
-        catch(...) {
+        catch(...) { // throws invalid index error to terminal and continues
             cout << "invalid index" << endl; 
         }
-        // if (0 > index | index > count) {
-        //     cout << "invalid index";
-        // }
         return current;
     }
-        
-        
-    
-    
-    void add(int value, int index) {
-        if (index == 0) {
+    // required linked list functions
+    int remove(int index) { // removes an element from a specified index and returns the value
+        node* curr = front;
+        node* prev = front;
+        if (index < count) { // ensures index is within range of list
+            if (index == 0) { //executes case for if index is 0
+                front = front->next;
+                curr->next = nullptr;
+                if (count == 0) {// removes the first element
+                    free(front);
+                    count -= 1;
+                }
+            }
+            while (index > 0) { // iterates throuth the list until reaches desired index
+                prev = curr;
+                curr = curr->next;
+                index -= 1;
+            }
+            // removes the element from the list by moveing pointers
+            count -= 1;
+            prev->next = curr->next;
+            curr->next = nullptr;
+            return curr->data;
+        }
+        return -999999;
+    }
+
+    void add(int value, int index) {// adds an element to any point of the linked list
+        if (index == 0) {// executes code to insert element at the front of the list if index is zero
             add0(value);
             return;
         }
+        // sets current and previous to the proper values using iterate function
         node* curr = iterate(index-1);
         node* prev = curr;
         curr = curr->next;
-        node* insert = new node();
+        node* insert = new node();// creates the new node to be inserted
         insert->data = value;
-        
+        //resets pointers to the proper elements
         prev->next = insert;
         prev->next->next = curr;
         count += 1;
     }
 
-    int get(int index) {
-        if (count < index <= count) {
+    int get(int index) {// gets a specified element from an index
+        if (count < index <= count) {// ensures index is within existing range
             return iterate(index)->data;
         }
         return -999999;
-    }
-    
-    int list_len() {
-        return count;
     }
 };
 

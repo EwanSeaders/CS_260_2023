@@ -3,22 +3,18 @@
 using std::cout;
 using std::endl;
 // using namespace::std;
-struct node {
+struct node { // nodes for the linked queue
     int data;
     struct node* next;
 };
 
-class Queue{
+class Queue{ // linked queue data structure
 private:
     /* data */
     node *front = nullptr;
     node *back = nullptr;
     int count = 0;
 public:
-    // Queue() {
-    //     node *front = nullptr;
-    //     node *back = nullptr;
-    // };
     
     void enqueue(int x) { // adds an element to the back of the queue
         // create a new node (current) and assign it new values
@@ -30,6 +26,7 @@ public:
             front = back = current;
             return;
         }
+        
         back->next = current;
         back = current;
         count += 1;
@@ -40,7 +37,7 @@ public:
             back = nullptr;
             return -9999999;
         }
-        
+        // removes the element from the queue
         node* temp = front;
         front = front->next;
         return temp->data;
