@@ -7,6 +7,7 @@ struct node {
     int key;
     node* left = nullptr;
     node* right = nullptr;
+    node* parent = nullptr;
 };
 
 class binaryTree{
@@ -21,8 +22,6 @@ private:
     }
 
 public:
-    
-    
     
     void add(int value, node* curr=nullptr) {// adds a value to the binary tree
         if (top == nullptr) {// creates first node of the tree if it is empty
@@ -40,19 +39,58 @@ public:
         }
     }
 
-    int remove(int value, node* curr=nullptr) {
-        if (top == nullptr) {return -999999;}
-            if(curr == nullptr) {curr = top;}//initializes current
-            if (value < curr->key) {// walks down the left
-                if (curr->left != nullptr) {remove(value, curr->left);}
-                
+    // void repoint(node* curr, node* parent, node* del_node=nullptr) {// rearranges pointers if the node is a right child of the 
+    //     if (del_node=nullptr) {del_node = curr;}
+    //     if(del_node->key > parent->key) {//
+    //         parent->right = del_node->left;
+
+    //     }
+       
+    // }
+    
+    node* findParent(int value, node* curr=nullptr) {// returns the node pointer to the value specified or returns nullptr if it does not exist
+        if(curr == nullptr) {curr = top;}//initializes current
+        if (value == curr->left->key | value == curr->right->key){// returns parent if a child equals the value
+            return curr;
+        }
+        if (value < curr->key) {// walks down the left
+            cout << "left" << endl;
+            if (curr->left != nullptr) {findParent(value, curr->left);}
+        }
+        cout << "what" << endl;
+        if (value > curr->key) {// walks down the right
+            cout << "right" << endl;
+            if (curr->right != nullptr) {findParent(value, curr->right);}
+        }
+        // if (curr->left == nullptr & curr->right == nullptr) {
+        //     return nullptr;
+        // }
+    }
+
+    bool find(int value) {// returns true if the value is stored in the tree
+        node* parent = findParent(value);
+        if (findParent(value) != nullptr && top != nullptr) {
+            return true;
+        }
+        return false;
+    }
+
+
+    int remove(int value) {
+        node* parent=findParent(value);
+        node* del_node;
+        if (value == parent->left->key){del_node = parent->left;}
+        if (value == parent->right->key){del_node = parent->right;}
+        node* curr = del_node;
+        if (del_node->key > parent->key) {
+            parent->right = del_node->left;
+            curr = curr->left;
+            while (curr->right != nullptr){
+                curr = curr->right;
             }
-            if (value > curr->key) {// walks down the right
-                if (curr->right != nullptr) {remove(value, curr->right);}
-            }
-            if (value == curr->key) {
-                
-            }
+            curr->right = del_node->right;
+            delete del_node;
+        }
     }
 
     void inOrder(node* curr=nullptr) {// prints out the nodes of the tree using an in order traversal
@@ -78,7 +116,7 @@ public:
 };
 
 
-int main() {//runs tests written for 
+int main() {//runs tests written for
     binaryTree myTree;
 
     myTree.add(50);
@@ -100,6 +138,9 @@ int main() {//runs tests written for
     cout << endl;
     myTree.preOrder();
     cout << endl;
+    cout << "findParent test: " << myTree.findParent(40) << endl;
+    cout << "remove(40) test: " << myTree.remove(40) << endl;
+    myTree.inOrder();
 
     cout << "end program" << endl;
     return 0;
