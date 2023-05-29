@@ -16,7 +16,7 @@ private:
     int count = 0;
 public:
     
-    void enqueue(int x) { // adds an element to the back of the queue
+    void enqueue(int x) { // adds an element to the back of the queue // O(1)
         // create a new node (current) and assign it new values
         node* current = new node();
         current->data = x;
@@ -32,7 +32,7 @@ public:
         count += 1;
     }
 
-    int dequeue() { // removes an element from the front of the queue
+    int dequeue() { // removes an element from the front of the queue // O(1)
         if(front == nullptr) {
             back = nullptr;
             return -9999999;
@@ -44,7 +44,7 @@ public:
         free(temp);
     }
 
-    int peekFront() { // returns element at the front of the queue
+    int peekFront() { // returns element at the front of the queue // O(1)
         if (front == nullptr && back == nullptr) {
             
             return -9999999;
@@ -52,7 +52,7 @@ public:
         return front->data;
     }
 
-    int peekBack() {// returns element at the back of the queue
+    int peekBack() {// returns element at the back of the queue // O(1)
         if (back == nullptr && back == nullptr) {
             return -9999999;
         }
