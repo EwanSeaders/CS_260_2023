@@ -1,3 +1,20 @@
+/*tests
+insert:
+    1. make sure it inserts to an empty list
+    2. make sure it inserts to a list with some elements and check to see if it is in ascending order
+    3. make sure it inserts new max values properly
+    4. make sure it inserts new min values properly
+delete:
+    1. make sure it properly deletes a value from a list with multiple elements
+    2. make sure it properly deletes a value from the beginning and end
+    3. make sure it behaves properly when deleting from an empty list
+search:
+    1. make sure the function returns properly when empty
+    2. make sure the function returns properly when not empty
+
+*/
+
+
 #include <iostream>
 
 using std::cout;
