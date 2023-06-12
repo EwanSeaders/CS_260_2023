@@ -42,8 +42,7 @@ public:
         }
         cout << endl;
     }
-    
-    int list_len() {// returns the number of values in the list based on the private count variable
+       int list_len() {// returns the number of values in the list based on the private count variable
         return count;
     }
 
