@@ -439,3 +439,213 @@
 [8] Found 0 cached items.
 [8] Language: en-US
 [8] Script file does not exist.
+************************************* Invoked: Thu Jun 8 18:49:02 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m64, nul
+[6] Operations sanity check succeeded.
+[11] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[11] Found 0 cached items.
+[11] Language: en-US
+[11] Script file does not exist.
+************************************* Invoked: Thu Jun 8 18:49:03 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m32, nul
+[19] Operations sanity check succeeded.
+[24] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[24] Found 0 cached items.
+[24] Language: en-US
+[24] Script file does not exist.
+************************************* Invoked: Thu Jun 8 18:49:03 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, nul
+[6] Operations sanity check succeeded.
+[10] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[10] Found 0 cached items.
+[10] Language: en-US
+[10] Script file does not exist.
+************************************* Invoked: Thu Jun 8 18:49:04 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m64, nul
+[6] Operations sanity check succeeded.
+[10] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[10] Found 0 cached items.
+[11] Language: en-US
+[11] Script file does not exist.
+************************************* Invoked: Thu Jun 8 18:49:04 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m32, nul
+[6] Operations sanity check succeeded.
+[11] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[11] Found 0 cached items.
+[11] Language: en-US
+[11] Script file does not exist.
+************************************* Invoked: Thu Jun 8 18:49:04 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, nul
+[8] Operations sanity check succeeded.
+[14] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[14] Found 0 cached items.
+[14] Language: en-US
+[14] Script file does not exist.
+************************************* Invoked: Fri Jun 9 21:44:03 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m64, nul
+[3] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Fri Jun 9 21:44:03 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m32, nul
+[5] Operations sanity check succeeded.
+[9] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[9] Found 0 cached items.
+[9] Language: en-US
+[9] Script file does not exist.
+************************************* Invoked: Fri Jun 9 21:44:03 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, nul
+[4] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Fri Jun 9 21:44:04 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m64, nul
+[5] Operations sanity check succeeded.
+[10] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[10] Found 0 cached items.
+[10] Language: en-US
+[10] Script file does not exist.
+************************************* Invoked: Fri Jun 9 21:44:04 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m32, nul
+[4] Operations sanity check succeeded.
+[15] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[15] Found 0 cached items.
+[15] Language: en-US
+[15] Script file does not exist.
+************************************* Invoked: Fri Jun 9 21:44:04 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, nul
+[3] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[7] Language: en-US
+[7] Script file does not exist.
+************************************* Invoked: Sat Jun 10 16:51:23 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m64, nul
+[3] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[7] Language: en-US
+[7] Script file does not exist.
+************************************* Invoked: Sat Jun 10 16:51:23 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m32, nul
+[3] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Sat Jun 10 16:51:23 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, nul
+[3] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[7] Language: en-US
+[7] Script file does not exist.
+************************************* Invoked: Sat Jun 10 16:51:23 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m64, nul
+[3] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Sat Jun 10 16:51:23 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m32, nul
+[3] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Sat Jun 10 16:51:23 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, nul
+[4] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[7] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:31:59 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m64, nul
+[3] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:31:59 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m32, nul
+[4] Operations sanity check succeeded.
+[9] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[9] Found 0 cached items.
+[9] Language: en-US
+[9] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:00 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, nul
+[4] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:00 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m64, nul
+[4] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:00 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m32, nul
+[4] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:00 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, nul
+[4] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:01 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m64, nul
+[3] Operations sanity check succeeded.
+[8] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[8] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:01 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m32, nul
+[3] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[7] Language: en-US
+[7] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:01 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, nul
+[3] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[8] Language: en-US
+[8] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:02 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m64, nul
+[5] Operations sanity check succeeded.
+[9] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[9] Found 0 cached items.
+[9] Language: en-US
+[9] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:02 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m32, nul
+[3] Operations sanity check succeeded.
+[50] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[50] Found 0 cached items.
+[50] Language: en-US
+[50] Script file does not exist.
+************************************* Invoked: Mon Jun 12 11:32:02 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, nul
+[3] Operations sanity check succeeded.
+[7] Using metadata cache from "C:/Users/Ewan/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[7] Found 0 cached items.
+[7] Language: en-US
+[7] Script file does not exist.
