@@ -65,10 +65,13 @@ bool Graph::nodeExists(string name) {
     return true;
 }
 
-// // Check if an edge exists with the given name, returns true if edge exists, false otherwise...
-// bool Graph::edgeExists(string source, string destination) {
-
-// }
+// Check if an edge exists with the given name, returns true if edge exists, false otherwise...
+bool Graph::edgeExists(string source, string destination) {
+    GraphNode* sourceNode = findNodeHelper(source);
+    if (sourceNode == nullptr) {return false;}
+    if (travelEdge(sourceNode, destination) == nullptr) {return false;}
+    return true;
+}
 
 /* Print out all nodes and edges in the form:
     a -> b, c, e
@@ -85,6 +88,23 @@ void Graph::toString() {// testing function to verify everything is being stored
         }
         cout << endl;
     }
+    cout << endl;
+}
+
+void Graph::graphPrint() {// prints a string representation of all nodes in the graph
+            for (auto node : nodes) {
+                cout << node->getValue() << ", ";
+            }
+            cout << endl;
+        }
+
+GraphNode* Graph::travelEdge(GraphNode* source, string destination) {// travels from the source to the destination of the edge by walking over the edge
+    for (auto edge : source->getNeighbors()) {
+        if (edge->destination->getValue() == destination) {// compare the value of the edge destination to destination argument
+            return edge->destination;
+        }
+    }
+    return nullptr;
 }
 
 // // Find shortest path from node with name to each other node that can be reached, returns a string with that information
@@ -96,6 +116,7 @@ void Graph::toString() {// testing function to verify everything is being stored
 // string Graph::minimumSpanningTree() {
 
 // }
+
 
 // // Start of private functions
 // Finds the node with name, return pointer to that node
@@ -119,19 +140,3 @@ edge *Graph::findEdgeHelper(string source, string destination) {
     return nullptr;
 }
 
-void Graph::graphPrint() {// prints a string representation of all nodes in the graph
-            for (auto node : nodes) {
-                cout << node->getValue() << ", ";
-            }
-            cout << endl;
-        }
-
-
-GraphNode* Graph::travelEdge(GraphNode* source, string destination) {// travels from the source to the destination of the edge by walking over the edge
-    for (auto edge : source->getNeighbors()) {
-        if (edge->destination->getValue() == destination) {// compare the value of the edge destination to destination argument
-            return edge->destination;
-        }
-    }
-    return nullptr;
-}

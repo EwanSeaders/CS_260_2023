@@ -84,7 +84,23 @@ int main(int argc, char **argv) {
 
     // prints out all nodes and their edges to check everything is working
     myGraph.toString();
+    
+    // nodeExists tests
+    cout << "myGraph.nodeExists('Albany'): " << myGraph.nodeExists("Albany") << endl;// expected true
+    cout << "myGraph.nodeExists('Canby'): " << myGraph.nodeExists("Canby") << endl;// expected false
+    
+    // edgeExists tests
+    cout << "myGraph.edgeExists('Albany', 'Corvallis'): " << myGraph.edgeExists("Albany", "Corvallis") << endl;// expected true
+    cout << "myGraph.edgeExists('Canby', 'Corvallis'): " << myGraph.edgeExists("Canby", "Corvallis") << endl;// expected false due to source node not existing
+    cout << "myGraph.edgeExists('Corvallis', 'Canby'): " << myGraph.edgeExists("Corvallis", "Canby") << endl;// expected false due to destination node not existing
+    cout << "myGraph.edgeExists('Corvallis', 'Lebanon'): " << myGraph.edgeExists("Corvallis", "Lebanon") << endl;// expected false due to edge not existing
 
+    // travelEdge tests
+    cout << "source: " << myGraph.findNodeHelper("Corvallis")->getValue() << "  " << "myGraph.travelEdge(myGraph.findNodeHelper('Corvallis'), 'Albany')->getValue(): " 
+        << myGraph.travelEdge(myGraph.findNodeHelper("Corvallis"), "Albany")->getValue() << endl;// expected: Albany
+
+    cout << "source: " << myGraph.findNodeHelper("Corvallis")->getValue() << "  " << "myGraph.travelEdge(myGraph.findNodeHelper('Corvallis'), 'Lebanon'): " 
+        << myGraph.travelEdge(myGraph.findNodeHelper("Corvallis"), "Lebanon") << endl;// expected: 0
 
     cout << "end program" << endl;
 }

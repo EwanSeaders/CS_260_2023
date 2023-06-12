@@ -39,9 +39,9 @@ class Graph {
         void graphPrint();
 
         edge *findEdgeHelper(string source, string destination);
+        GraphNode *findNodeHelper(string name);
         
     private:
         vector<GraphNode *> nodes;
         
-        GraphNode *findNodeHelper(string name);
 };
