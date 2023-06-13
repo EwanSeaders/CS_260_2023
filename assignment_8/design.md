@@ -23,6 +23,7 @@ classes
             Storage:
                 1. stores a string value as the name of the node
                 2. stores a vector of edge pointers
+                
             
             functionality:
                 1. it will be able to add edges
@@ -43,8 +44,26 @@ classes
             5. duplicates of edges are not allowed
             6. duplicates of nodes are not allowed
             
+            shortest path algorithm (dijktras):
+                
+                1. specify a start and end node
+                2. make vectors with:
+                    - vector<GraphNode*> storing all nodes in the graph
+                    - veector<int> storing the current cost to reach (all start at 999999999 except start node start at 0)
+                    - vector<Graphnode*> storing the pointer to the nodes predecessor
+                3. find and begin at start node
+                4. visit each neighbor if it is not visited
+                    - if the weight of the current node + the edge weight to get to the next node is less than its current value, update the value
+                5. search through the list of nodes and find the one with the smallest weight that hasnt been visited
+                6. repeat  until destination node is marked visited
+
+
+
+            minimum spanning tree algorithm:
+
             storage
                 1. the graph will be stored as a list of GraphNode pointers
+                
 
         tests:
             1. add nodes to the graph

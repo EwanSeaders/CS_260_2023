@@ -28,13 +28,11 @@ public:
     vector<edge *> getNeighbors(); // get neighbors as a list of pointers
     void printNeighbors();
 
-    bool edgeExists(edge* edgePointer) {// checks to see if an edge already exists
-        for (auto edge : neighbors ) {
-            if (edge == edgePointer) {return true;}
-        }
-        return false;
-    }
+    bool edgeExists(edge* edgePointer);// checks to see if an edge already exists
+    bool isVisited();// helper function for dijkstras algorithm to determine whether the node has been visited
+
 private:
     string value; // stored value
     vector<edge *> neighbors; // reference to neigbors
+    bool visited;
 };

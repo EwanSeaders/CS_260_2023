@@ -102,5 +102,28 @@ int main(int argc, char **argv) {
     cout << "source: " << myGraph.findNodeHelper("Corvallis")->getValue() << "  " << "myGraph.travelEdge(myGraph.findNodeHelper('Corvallis'), 'Lebanon'): " 
         << myGraph.travelEdge(myGraph.findNodeHelper("Corvallis"), "Lebanon") << endl;// expected: 0
 
+
+
+    // shortest path algorithm testing
+    Graph dijkstraTestGraph;
+    // add nodes to the graph
+    dijkstraTestGraph.addNode("a");
+    dijkstraTestGraph.addNode("b");
+    dijkstraTestGraph.addNode("c");
+    dijkstraTestGraph.addNode("d");
+    dijkstraTestGraph.addNode("e");
+    dijkstraTestGraph.addNode("f");
+    
+
+    dijkstraTestGraph.addEdge("a", "b", 1);
+    dijkstraTestGraph.addEdge("a", "c", 3);
+    dijkstraTestGraph.addEdge("b", "d", 3);
+    dijkstraTestGraph.addEdge("b", "c", 5);
+    dijkstraTestGraph.addEdge("c", "d", 7);
+    dijkstraTestGraph.addEdge("c", "e", 5);
+    dijkstraTestGraph.addEdge("d", "f", 12);
+    dijkstraTestGraph.addEdge("e", "f", 1);
+    dijkstraTestGraph.toString();
+    
     cout << "end program" << endl;
 }

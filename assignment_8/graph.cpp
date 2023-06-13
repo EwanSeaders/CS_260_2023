@@ -30,16 +30,14 @@ bool Graph::addNode(string newName) {
 // Add an edge using source and destination as names of nodes to connect, returns true if the edge is added, false otherwise
 // adds undirected edges
 bool Graph::addEdge(string sourceName, string destinationName, int weight) {
-    if ((nodeExists(sourceName) && nodeExists(destinationName)) == false) {return false;}
-    
+    if ((nodeExists(sourceName) && nodeExists(destinationName)) == false) {return false;}// false if a node doesnt exist
+    if (edgeExists(sourceName, destinationName)) {return false;}// false if edge is a duplicate
     // find and create pointers to source and destination
     GraphNode *source = findNodeHelper(sourceName);
     GraphNode *destination = findNodeHelper(destinationName);
-    
     // create a new edge with proper parameters
     source->addEdge(destination, weight);
     destination->addEdge(source, weight);
-
     return true;
 }
 
@@ -116,7 +114,12 @@ GraphNode* Graph::travelEdge(GraphNode* source, string destination) {// travels 
 // string Graph::minimumSpanningTree() {
 
 // }
-
+int Graph::getNodeIndex(string value) {// returns the index of a node in the graph based on the name of a node
+    for (int i=0; i < nodes.size(); i++) {
+        if (nodes[i]->getValue() == value) {return i;}
+    }
+    return -999999999;
+}
 
 // // Start of private functions
 // Finds the node with name, return pointer to that node

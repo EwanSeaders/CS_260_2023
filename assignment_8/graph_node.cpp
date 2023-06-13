@@ -8,6 +8,7 @@ further documentation included in design.md
 
 GraphNode::GraphNode(string newName) {
     value = newName;
+    visited = false;
 }
 
 GraphNode::~GraphNode() {// deletes node
@@ -37,3 +38,12 @@ void GraphNode::printNeighbors() {// prints the names of the neigboring nodes
     }
     cout << endl;
 }
+
+bool GraphNode::isVisited(){return visited;}// helper function for dijkstras algorithm to determine whether the node has been visited
+
+bool GraphNode::edgeExists(edge* edgePointer) {// checks to see if an edge already exists
+        for (auto edge : neighbors ) {
+            if (edge == edgePointer) {return true;}
+        }
+        return false;
+    }
