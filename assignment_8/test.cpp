@@ -113,7 +113,6 @@ int main(int argc, char **argv) {
     dijkstraTestGraph.addNode("d");
     dijkstraTestGraph.addNode("e");
     dijkstraTestGraph.addNode("f");
-    
 
     dijkstraTestGraph.addEdge("a", "b", 1);
     dijkstraTestGraph.addEdge("a", "c", 3);

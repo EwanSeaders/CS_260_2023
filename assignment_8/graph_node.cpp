@@ -47,3 +47,5 @@ bool GraphNode::edgeExists(edge* edgePointer) {// checks to see if an edge alrea
         }
         return false;
     }
+int GraphNode::getDWeight() {return dWeight;}
+

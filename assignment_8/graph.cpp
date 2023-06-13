@@ -6,6 +6,7 @@ further documentation included in design.md
 
 #include "graph.h"
 
+
 Graph::Graph() {
     // do nothing for now for now
 }
@@ -105,10 +106,22 @@ GraphNode* Graph::travelEdge(GraphNode* source, string destination) {// travels 
     return nullptr;
 }
 
-// // Find shortest path from node with name to each other node that can be reached, returns a string with that information
-// string Graph::shortestPath(string name) {// Dijkstras algorithm implementation
+// Find shortest path from node with name to each other node that can be reached, returns a string with that information
+string Graph::shortestPath(string source, string destination) {// Dijkstras algorithm implementation
+    GraphNode *sourceNode = findNodeHelper(source);
+    GraphNode *destinationNode = findNodeHelper(destination);
+    GraphNode *currentNode = sourceNode;
+    DijkstraTable* table = initTable(source);// initializes the table
+    
+    while (destinationNode->isVisited() == false) {
+        currentNode = minWeight(table);
 
-// }
+    }
+    
+
+}
+
+
 
 // // Find a minimum spanning tree and return it.
 // string Graph::minimumSpanningTree() {
@@ -120,6 +133,8 @@ int Graph::getNodeIndex(string value) {// returns the index of a node in the gra
     }
     return -999999999;
 }
+
+vector<GraphNode *> Graph::getNodes(){return nodes;}//returns the node list
 
 // // Start of private functions
 // Finds the node with name, return pointer to that node
@@ -143,3 +158,29 @@ edge *Graph::findEdgeHelper(string source, string destination) {
     return nullptr;
 }
 
+// DijkstraTable* Graph::initTable(string source){// initializes the dijkstrTable for the graph
+//     DijkstraTable table;
+//     table.nodeList = nodes;
+//     table.currWeight[nodes.size()];
+//     table.predecessorList[nodes.size()];
+//     for (int i=0; i < nodes.size(); i++) {
+//         table.currWeight[i] = 9999999999;
+//         table.predecessorList[i] = nullptr;
+//         if (table.nodeList[i]->getValue() == source) {
+//             table.currWeight[i] = 0;
+//         }
+//     }
+//     return &table;
+// }
+
+GraphNode* Graph::minWeight(){
+    int minVal = 999999999;
+    int count = 0;
+    for (auto node : nodes) {// iterates throught the list of weights to find min
+        if (node->dWeight < minVal){minVal = weight;}
+        count += 1;
+    }
+    for (int i=0; i <= count; i++){// iterates back through to select the minimum node
+        if (minVal == table->currWeight[i]) {return table->nodeList[i];}
+    }
+}

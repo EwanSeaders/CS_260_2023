@@ -6,6 +6,7 @@ further documentation included in design.md
 
 #pragma once
 #include "graph_node.h"
+// #include "dijkstra_table.h"
 
 class Graph {
     public:
@@ -31,9 +32,8 @@ class Graph {
                 c -> a, b, e, q
                 ...
             */
-           
 
-        string shortestPath(string name); // single-source shortest path
+        string shortestPath(string source, string destination); // single-source shortest path
         string minimumSpanningTree();
 
         void graphPrint();
@@ -42,8 +42,13 @@ class Graph {
         GraphNode *findNodeHelper(string name);
 
         int getNodeIndex(string value);// returns the index of a node in the graph based on the name of a node
-        
+        vector<GraphNode *> getNodes();//returns the node list
+        // DijkstraTable* initTable(string source);// initializes the dijkstrTable for the graph
+
+        GraphNode* minWeight();//returns the node with the current smallest weight that has not been visited by dijkstras algorithm
+        int getDWeight(); 
     private:
         vector<GraphNode *> nodes;
+
         
 };
