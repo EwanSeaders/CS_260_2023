@@ -8,7 +8,7 @@ further documentation included in design.md
 
 GraphNode::GraphNode(string newName) {
     value = newName;
-    visited = false;
+    resetPubs();
 }
 
 GraphNode::~GraphNode() {// deletes node
@@ -39,13 +39,31 @@ void GraphNode::printNeighbors() {// prints the names of the neigboring nodes
     cout << endl;
 }
 
-bool GraphNode::isVisited(){return visited;}// helper function for dijkstras algorithm to determine whether the node has been visited
-
 bool GraphNode::edgeExists(edge* edgePointer) {// checks to see if an edge already exists
         for (auto edge : neighbors ) {
             if (edge == edgePointer) {return true;}
         }
         return false;
     }
+
+bool GraphNode::isVisited(){return visited;}// helper function for dijkstras algorithm to determine whether the node has been visited
+
 int GraphNode::getDWeight() {return dWeight;}
+
+
+
+GraphNode* GraphNode::getDParent() {return dParent;}// returns dParent value
+
+void GraphNode::resetPubs() {
+    visited = false;
+    dParent = nullptr;
+    dWeight = 999999999;
+}
+
+// bool GraphNode::nodeInSet(GraphNode* node){// checks whether a node is in setNodes
+//     for (auto elem : setNodes) {
+//         if (elem == node) {return true;}
+//     }
+//     return false;
+// }
 

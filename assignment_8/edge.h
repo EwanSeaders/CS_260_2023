@@ -18,3 +18,4 @@ struct edge {
     GraphNode *destination;
     int weight;
 };
+

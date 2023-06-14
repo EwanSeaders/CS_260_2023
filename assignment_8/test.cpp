@@ -13,10 +13,12 @@ further documentation included in design.md
 
 #include "graph.h"
 // #include "graph_node.h"
-
+#include <algorithm>
 
 using std::cout;
 using std::endl;
+using std::sort;
+using std::set_union;
 
 
 int main(int argc, char **argv) {
@@ -124,5 +126,18 @@ int main(int argc, char **argv) {
     dijkstraTestGraph.addEdge("e", "f", 1);
     dijkstraTestGraph.toString();
     
+    cout << "shortestPath('a','f'): " << dijkstraTestGraph.shortestPath("a","f") << endl;// path with multiple path options
+    cout << "shortestPath('a','b'): " << dijkstraTestGraph.shortestPath("a","b") << endl;
+    cout << "shortestPath('a','d'): " << dijkstraTestGraph.shortestPath("a","d") << endl;
+    cout << "shortestPath('f','b'): " << dijkstraTestGraph.shortestPath("f","b") << endl;// path with different start node
+    cout << "shortestPath('a','d'): " << dijkstraTestGraph.shortestPath("a","d") << endl;
+    cout << "shortestPath('a','a'): " << dijkstraTestGraph.shortestPath("a","a") << endl;// returns the shortest path to start node
+
+    
+    // dijkstraTestGraph.printEdges(dijkstraTestGraph.buildEdgeVector());// verifies the list of edges is full ordered properly
+
+    cout << "dijkstraTestGraph Minimum Spanning Tree\n" << dijkstraTestGraph.minimumSpanningTree() << endl;
+
+
     cout << "end program" << endl;
 }
