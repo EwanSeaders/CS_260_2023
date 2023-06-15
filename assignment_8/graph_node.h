@@ -25,33 +25,52 @@ public:
     
     // public variables
     bool visited;// temp bool value for dijkstras algorithm: defaults to false
-    int dWeight;// temp weight for djkstras algorithm and temp value to represent the sets in min spanning tree algorithm
-    GraphNode* dParent;// temp parent for dijkstras algorithm
-    // vector<GraphNode*> setNodes;
-    // public variable functions
-    bool nodeInSet(GraphNode* node);// checks whether a node is in setNodes
-    void resetPubs();// resets the public variables to default values
     
+    int dWeight;// temp weight for djkstras algorithm and temp value to represent the sets in min spanning tree algorithm
+    
+    GraphNode* dParent;// temp parent for dijkstras algorithm
+    
+    
+    // public variable functions
+    
+    // resets the public variables to default values
+    void resetPubs();// O(1)
     
 
     //  primary functions
-    void addEdge(GraphNode * destination, int weight);// add an edge
+    
+    // add an edge
+    void addEdge(GraphNode * destination, int weight);// O(1)
 
     // helper functions
-    vector<edge *> getNeighbors(); // get neighbors as a list of pointers
-    bool edgeExists(edge* edgePointer);// checks to see if an edge already exists
-    bool isVisited();// helper function for dijkstras algorithm to determine whether the node has been visited
-    GraphNode* getDParent();// returns dParent value
-    int getDWeight();// returns dWeight value
-    string getValue();// returns Value
+    
+    // get neighbors as a list of pointers
+    vector<edge *> getNeighbors();// O(1)
+    
+    // checks to see if an edge already exists
+    bool edgeExists(edge* edgePointer);// O(N)
+    
+    // helper function for dijkstras algorithm to determine whether the node has been visited
+    bool isVisited();// O(1)
+    
+    // returns dParent value
+    GraphNode* getDParent();// O(1)
+    
+    // returns dWeight value
+    int getDWeight();// O(1)
+    
+    // returns Value
+    string getValue();// O(1)
+    
     
     //testing functions
-    void printNeighbors();// prints out values of all adjacent nodes
+    
+    // prints out values of all adjacent nodes
+    void printNeighbors();// O(N)
 
 private:
     // private variables
     string value; // stored value
-    vector<edge *> neighbors; // reference to neigbors
+    vector<edge *> neighbors; // vector of neigbors
     
-
 };

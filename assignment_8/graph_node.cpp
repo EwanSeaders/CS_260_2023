@@ -50,8 +50,6 @@ bool GraphNode::isVisited(){return visited;}// helper function for dijkstras alg
 
 int GraphNode::getDWeight() {return dWeight;}
 
-
-
 GraphNode* GraphNode::getDParent() {return dParent;}// returns dParent value
 
 void GraphNode::resetPubs() {
@@ -59,11 +57,4 @@ void GraphNode::resetPubs() {
     dParent = nullptr;
     dWeight = 999999999;
 }
-
-// bool GraphNode::nodeInSet(GraphNode* node){// checks whether a node is in setNodes
-//     for (auto elem : setNodes) {
-//         if (elem == node) {return true;}
-//     }
-//     return false;
-// }
 

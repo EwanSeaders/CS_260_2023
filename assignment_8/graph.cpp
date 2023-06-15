@@ -81,24 +81,17 @@ string Graph::minimumSpanningTree() {
     vector<pair<int, edge*>> edges = buildEdgeVector();// build sorted list of edges
     initSets();// initialize the nodes dWeight values
     vector<edge*> spanningTree;
-    for (auto node :nodes) {
-        cout << node->dWeight << endl;
-    }
     for (auto edge : edges) {// iterate through edges
-        cout << edge.second << endl;
         int s = edge.second->source->dWeight;
         int d = edge.second->destination->dWeight;
         if (s != d) {// if nodes are not in the same tree, merge tree
-            cout << "add to edge list" << endl;
             spanningTree.push_back(edge.second);// add edge to the list of edges in the MST
             if (updateNodeSet(s, d) == true) {break;}//update node sets and break the loop if all nodes have been hit
-        // cout << spanToString(spanningTree) << endl;
         }
     }
-    string myString = spanToString(spanningTree);
-    resetNodePubs();
+    string myString = spanToString(spanningTree);//converts the list of edges to a string representing the MST
+    resetNodePubs();// resets public variables
     return myString;
-    
 }
 
 // Find shortest path from node with name to each other node that can be reached, returns a string with that information
@@ -229,14 +222,14 @@ void Graph::dijkstrasAlgorithm(GraphNode *sourceNode, GraphNode *destinationNode
     // main while loop to execute algorithm
     while (destinationNode->isVisited() == false) {
         currentNode->visited = true;
-        for (auto edge : currentNode->getNeighbors()) {
+        for (auto edge : currentNode->getNeighbors()) {// iterates through the nodes neighbors
             if (edge->destination->isVisited()) {continue;}
             if ((edge->weight + currentNode->getDWeight()) < edge->destination->getDWeight()) {// if current weight + edge weight are less than the neighbors total weight
                 edge->destination->dWeight = edge->weight + currentNode->getDWeight();// updates the weight
                 edge->destination->dParent = currentNode;// updates parent node
             }
         }
-        currentNode = minWeightNode();
+        currentNode = minWeightNode();// changes current node to the next lowest visited node
     }
 }
 

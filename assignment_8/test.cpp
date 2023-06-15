@@ -133,10 +133,51 @@ int main(int argc, char **argv) {
     cout << "shortestPath('a','d'): " << dijkstraTestGraph.shortestPath("a","d") << endl;
     cout << "shortestPath('a','a'): " << dijkstraTestGraph.shortestPath("a","a") << endl;// returns the shortest path to start node
 
+
+    Graph MSTgraph;
+// minimum spanning tree test graph
+// visual available in github repository
+    MSTgraph.addNode("a");
+    MSTgraph.addNode("b");
+    MSTgraph.addNode("c");
+    MSTgraph.addNode("d");
+    MSTgraph.addNode("e");
+    MSTgraph.addNode("f");
+    MSTgraph.addNode("g");
+    MSTgraph.addNode("h");
+    MSTgraph.addNode("i");
+    MSTgraph.addNode("j");// j and k not connected to the rest of the graph but have a node between them
+    MSTgraph.addNode("k");
+
+    MSTgraph.addEdge("a", "b", 4);
+    MSTgraph.addEdge("a", "h", 8);
+    MSTgraph.addEdge("b", "c", 8);
+    MSTgraph.addEdge("b", "h", 11);
+    MSTgraph.addEdge("c", "d", 7);
+    MSTgraph.addEdge("c", "f", 4);
+    MSTgraph.addEdge("c", "i", 2);
+    MSTgraph.addEdge("d", "e", 9);
+    MSTgraph.addEdge("d", "f", 14);
+    MSTgraph.addEdge("e", "f", 10);
+    MSTgraph.addEdge("f", "g", 2);
+    MSTgraph.addEdge("g", "h", 1);
+    MSTgraph.addEdge("g", "i", 6);
+    MSTgraph.addEdge("h", "i", 7);
+    MSTgraph.addEdge("j", "k", 177);// add edge between the 2 disconncted nodes
+    MSTgraph.toString();// check the graph is coming out properly
+    
+
     
     // dijkstraTestGraph.printEdges(dijkstraTestGraph.buildEdgeVector());// verifies the list of edges is full ordered properly
 
-    cout << "dijkstraTestGraph Minimum Spanning Tree\n" << dijkstraTestGraph.minimumSpanningTree() << endl;
+    cout << "dijkstraTestGraph Minimum Spanning Tree\n" << dijkstraTestGraph.minimumSpanningTree() << endl << endl;// test on connected graph
+    cout << "MSTgraph Minimum Spanning Tree\n" << MSTgraph.minimumSpanningTree() << endl << endl;// test on disconnected graph
+
+    cout << "MSTgraph.shortestPath('a','f'): " << MSTgraph.shortestPath("a","f") << endl;// path with multiple path options
+    cout << "MSTgraph.shortestPath('a','b'): " << MSTgraph.shortestPath("a","b") << endl;
+    cout << "MSTgraph.shortestPath('a','d'): " << MSTgraph.shortestPath("a","d") << endl;
+    cout << "MSTgraph.shortestPath('a','e'): " << MSTgraph.shortestPath("a","e") << endl;
+    cout << "MSTgraph.shortestPath('a','j'): " << MSTgraph.shortestPath("a","j") << endl;
 
 
     cout << "end program" << endl;

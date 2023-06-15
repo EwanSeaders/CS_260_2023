@@ -1,3 +1,4 @@
+design.md
 Ewan Seaders
 Graph project design
 
@@ -11,11 +12,8 @@ classes
                 1. source- pointer to the source node
                 2. destination- pointer to the destination node
                 3. weight- weight of the edge (int)
-
-
         tests:
             1. create an edge and show that each of the 3 datapoints stored can be accessed
-
 
     GraphNode:
         design:
@@ -47,10 +45,10 @@ classes
             2. try to add a node with a name that already exists
             3. add edges to the graph
             4. try adding two edges to the same pair of nodes    
-            
+        storage
+            1. the graph will be stored as a list of GraphNode pointers
             
         shortest path algorithm (dijktras):
-            
             1. specify a start and end node
             2. graphnodes will all have 3 public variables to use for this algorithm
                 - visited- bool value saying whether the node has been visited
@@ -63,8 +61,11 @@ classes
             6. repeat  until destination node is marked visited
 
             tests:
-
-
+                1. create a graph and run algorithm on it
+                2. run a test to find the shortest path from a node to itself
+                3. run a test starting at at least 2 of the different nodes and check manually
+                4. run multiple tests for random distances
+                5. test on a node that does not connect to the graph
 
         minimum spanning tree algorithm:
             storage:
@@ -76,12 +77,7 @@ classes
                 1. start at the first node in the edge list
                 2. check if the nodes being connected by the edge are in the same set
                     - if not, merge the sets otherwise continue
-            
             tests:
                 create 2 separate trees and run the algorithm on both
-
-        storage
-            1. the graph will be stored as a list of GraphNode pointers
-                
-
-        
+                one tree must be fully connected
+                the other will be a disconnected graph
