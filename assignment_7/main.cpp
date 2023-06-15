@@ -11,8 +11,14 @@ int main() {
     myHash.add("b");
     myHash.add("c");
     myHash.add("d");
-    myHash.add("");
+    // myHash.add("");
     myHash.add("a");
+    myHash.add("fun");
+    myHash.add("hello, world");
+    myHash.add("peaches");
+    myHash.add("q");
+    myHash.add("yikes");
+    myHash.add("test");
     
 
     

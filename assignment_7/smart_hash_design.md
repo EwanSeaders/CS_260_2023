@@ -20,4 +20,5 @@ testing:
         - remove a word that has no collisions
         - remove a word that is at the top of a stack
         - remove a word that is inside a stack of collisions
-        - search for a word that does not exist
+        - remove for a word that does not exist
+        - remove all elements in the hashtable

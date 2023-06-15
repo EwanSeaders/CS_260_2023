@@ -7,6 +7,7 @@ using std::vector;
 using std::cout;
 using std::endl;
 using std::string;
+using std::remove;
 
 class SmartHashtable {
     public:
@@ -23,7 +24,7 @@ class SmartHashtable {
     private:
         int size; // actual objects added to hashtable
         int capacity; // maximum possible objects in hashtable without collision in currently allocated memory
-        vector<string *> values; // pointer to array of strings, which are my hashtable's values, indexed by some key
+        vector<string> *values; // pointer to array of strings, which are my hashtable's values, indexed by some key
         int hash(string key);
-        
+        int collisionCount;
 };
