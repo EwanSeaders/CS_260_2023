@@ -1,3 +1,34 @@
+/*
+
+tests:
+    add():
+        1.  test it with add the first node
+        2. add a node that will go to the bottom left and right:
+        3. add several nodes to be in the middle, some with only one child and some with 2
+        4. add a duplicate node
+
+
+    remove():
+        1.  remove a node that has
+            - 1 child
+            - 2 children
+            - no children
+        2. remove top node
+        3. remove last node in the list
+        4. remove a node that is a right child
+        5. remove a node that is a left child
+        6. remove a node with a duplicate
+
+*/
+
+
+
+
+
+
+
+
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -7,7 +38,7 @@ struct node {
     int key;
     node* left = nullptr;
     node* right = nullptr;
-    node* parent = nullptr;
+    // node* parent = nullptr;
 };
 
 class binaryTree{
@@ -17,7 +48,8 @@ private:
     node* newNode(int key) {
         node* new_node = new node();
         new_node->key = key;
-        new_node->left = new_node->right = nullptr;
+        new_node->left = nullptr;
+        new_node->right = nullptr;
         return new_node;
     }
 
@@ -32,11 +64,12 @@ public:
         killSwitch();
     }
     void killSwitch(node* del_ptr=nullptr) {
-        if (del_ptr == nullptr) {del_ptr = top;}
-        if (del_ptr->right != nullptr) {killSwitch(del_ptr->right);}
-        if (del_ptr->left != nullptr) {killSwitch(del_ptr->left);}
-        if (del_ptr->right == nullptr && del_ptr->left == nullptr) {delete del_ptr;}
-        // delete[] top;
+        // if (del_ptr == nullptr) {del_ptr = top;}
+        // if (del_ptr->right != nullptr) {killSwitch(del_ptr->right);}
+        // if (del_ptr->left != nullptr) {killSwitch(del_ptr->left);}
+        // if (del_ptr->right == nullptr && del_ptr->left == nullptr) {delete del_ptr;}
+        // // delete[] top;
+        // killSwitch(del_ptr->left), killSwitch
         delete top;
         return;
     }
@@ -57,14 +90,7 @@ public:
         }
     }
 
-    // void repointRight(node* curr, node* parent, node* del_node=nullptr) {// rearranges pointers if the node is a right child of the 
-    //     if (del_node=nullptr) {del_node = curr;}
-    //     if(del_node->key > parent->key) {//
-    //         parent->right = del_node->left;
-
-    //     }
-       
-    // }
+    
     
     
     node* findParent(int value) {// returns the node pointer to the value specified or returns nullptr if it does not exist
@@ -92,37 +118,103 @@ public:
     //     }
     //     return false;
     // }
-
-
+    
+    // finds the first with a null right child: returns parent of null node
+    node* findNullChild(node* startNode) {
+        node* curr = startNode;
+        // if (curr->left != nullptr && curr->right != nullptr) {
+        //     curr = curr->left;
+        while (curr->right != nullptr){curr = curr->right;}
+        // }
+        // else if (curr->right != nullptr) {return curr->right;}
+        // // return curr;
+        return curr;
+    }
+    
+    // rearranges pointers if the node is a right child of the parent
+    bool repointRight(node* curr, node* parent, node* del_node=nullptr) {
+        bool myBool = false;
+        if (del_node->left != nullptr) {
+            curr = del_node->left;
+            // cout << "A\n\n";
+            myBool = true;
+            parent->right = del_node->left;// poits the parents right node to the left subtree of delnode
+            // cout << "right child 1\n\n";
+            if (del_node->right != nullptr){
+            // cout << "B\n\n";
+                curr = findNullChild(curr);// finds the first right node in delnodes left subtree that is null
+                curr->right = del_node->right;
+            }
+        }
+        else if (del_node->right != nullptr){// if del node left was null but not right
+            // cout << "C\n\n";
+            myBool = true;
+            parent->right = del_node->right;
+        }
+            // cout << "D\n\n";
+        
+        return myBool;
+    }
+// rearranges pointers if the node is a left child of the parent
+bool repointLeft(node* curr, node* parent, node* del_node=nullptr) {
+        bool myBool = false;
+        if (del_node->left != nullptr) {// if the left child of del_node exists
+            curr = del_node->left;
+            // cout << "A\n";
+            myBool = true;
+            parent->left = del_node->left;// poits the parents right node to the left subtree of delnode
+            // cout << "right child 1\n\n";
+            if (del_node->right != nullptr){
+            // cout << "B\n";
+                curr = findNullChild(curr);// finds the first right node in delnodes left subtree that is null
+                curr->right = del_node->right;
+            }
+        }
+        else if (del_node->right != nullptr){// if del node left was null but not right
+            // cout << "C\n\n";
+            myBool = true;
+            parent->left = del_node->right;
+        }
+            // cout << "D\n\n";
+        
+        return myBool;
+    }
+    
     int remove(int value) {
-        node* parent = findParent(value);
+        node* parent;
+        if (value != top->key){parent = findParent(value);}
         node* del_node;
-        if (value <= parent->left->key){del_node = parent->left;}
-        if (value > parent->right->key){del_node = parent->right;}
         node* curr = del_node;
-        node* temp = del_node;
-        if (del_node->key > parent->key) {
-            parent->right = del_node->left;
-            curr = curr->left;
-            while (curr->right != nullptr){
-                curr = curr->right;
-            }
-            curr->right = del_node->right;
+        node* temp;
+        if (value == top->key) {// if the value is the top node
+            del_node = top;
+            temp = del_node;
+            if (top->left != nullptr) {top = top->left;}
+            else if (top->right != nullptr) {top = top->right;}
+            else {top = nullptr;}
             delete del_node;
-            // repointRight(curr, parent);
+            return temp->key;
         }
-        if (del_node->key < parent->key) {
-            parent->left = del_node->left;
-            curr = curr->left;
-            while (curr->right != nullptr){
-                curr = curr->right;
+        if (value <= parent->key){del_node = parent->left;}// set delnode to proper value
+        if (value > parent->key){del_node = parent->right;}
+        temp = del_node;
+        if (del_node->key > parent->key) {// if the node to be deleted is a right child
+            // cout << "right child in\n\n";
+            if (repointRight(curr, parent, del_node) == false) {
+                parent->right = nullptr;
             }
-            curr->right = del_node->right;
-            delete del_node;
         }
+        if (del_node->key <= parent->key) {// if the node to be deleted is a left child
+            // cout << "left child in\n\n";
+            if (repointLeft(curr, parent, del_node) == false) {
+                parent->left = nullptr;
+            }
+        }
+        delete del_node;
         return temp->key;
     }
-
+    
+    
     void inOrder(node* curr=nullptr) {// prints out the nodes of the tree using an in order traversal
         if (curr == nullptr) {curr = top;}//initializes current
         if (curr->left != nullptr) {inOrder(curr->left);}// resurively walks to the left
@@ -160,6 +252,7 @@ int main() {//runs tests written for
     myTree.add(5);
     myTree.add(80);
     myTree.add(100);
+    myTree.add(90);
 
 
 
@@ -178,9 +271,33 @@ int main() {//runs tests written for
     cout << "findParent(50): " << myTree.findParent(50) << endl;// should return nullptr (0)
     // myTree.killSwitch();
     
-    cout << "remove(40): " << myTree.remove(80) << endl;
     myTree.inOrder();
+    
+    cout << "\nremove(80): " << myTree.remove(80) << endl;
+    myTree.inOrder();
+    cout << "\nremove(60): " << myTree.remove(60) << endl;
+    myTree.inOrder();
+    // cout << "\nremove(60): " << myTree.remove(60) << endl;
+    // myTree.inOrder();
+    cout << "\nremove(100): " << myTree.remove(100) << endl;
+    myTree.inOrder();
+    cout << "\nremove(50): " << myTree.remove(50) << endl;
+    myTree.inOrder();
+    cout << "\nremove(50): " << myTree.remove(50) << endl;
+    myTree.inOrder();
+    
+    cout << "\nremove(40): " << myTree.remove(40) << endl;
+    myTree.inOrder();
+    cout << "\nremove(10): " << myTree.remove(10) << endl;
+    myTree.inOrder();
+    cout << "\nremove(20): " << myTree.remove(20) << endl;
+    myTree.inOrder();
+    cout << "\nremove(30): " << myTree.remove(30) << endl;
+    myTree.inOrder();
+    // cout << "\nremove(5): " << myTree.remove(5) << endl;
+    // myTree.inOrder();
 
-    cout << "end program" << endl;
+
+    cout << "\nend program" << endl;
     return 0;
 }
