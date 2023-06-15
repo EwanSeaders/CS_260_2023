@@ -26,27 +26,16 @@ int SmartHashtable::hash(string key) {
         result += character*count; // add unicode values together and multply by their position
         count++;
     }
-
     return result % capacity; // mod capacity so that the index is guaranteed to be in my table!
 
 }
 
 int SmartHashtable::add(string newKey) {
     int result = 0;
-
     // find index of key, place value at index position in values array
     int index = hash(newKey);
-
-    // should have collision detection and handling... and update size appropriately
-    // if(values[index].back() != "") {
-    //     collisionCount++;
-    // } else { // either collision or inserting a newKey of ""
-    //     result = -1;
-    // }
-
     // then write to correct position (current collision handling technique: overwrite old value...)
     values[index].push_back(newKey);
-    
     size++;
 
     return result; // maybe a different return value on collision?
@@ -60,7 +49,7 @@ string SmartHashtable::find(string key) {
     int index = hash(key);
     
     // grab value stored at index in values array
-    if (values[index].back() == key) {// best case
+    if (values[index].back() == key) {// best case recudes time complexity
         return values[index].back();
     }
     
@@ -69,12 +58,7 @@ string SmartHashtable::find(string key) {
         if (result == key){
             return result;}
     }
-
-    // check if value is the expected value!
-    // if (result != key) {
-        result = "";
-    // }
-
+    result = "";
     // return resulting value
     return result;
 }
@@ -102,17 +86,6 @@ string SmartHashtable::remove(string oldKey) {
             }
         }
     }
-    
-    
-    // // check if value is the expected value!
-    // if(result != oldKey) {
-    //     result = "";
-    // } else {
-    //     values[index] = ""; // actually delete the value!
-    //     size--;
-    // }
-
-    // return that value
     return result;
 }
 
