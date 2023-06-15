@@ -14,4 +14,6 @@ clean:
 	rm -f *.o $(exe_file)
 
 # g++ driver.cpp graph.h graph.cpp graph_node.h edge.h graph_node.cpp -o driver
+
+# compile path
 # g++ test.cpp graph.cpp graph_node.cpp -o test
