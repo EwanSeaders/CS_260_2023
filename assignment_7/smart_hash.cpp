@@ -1,34 +1,33 @@
 
+#include "smart_hash.h"
 
-
-
-
-
-#include "hashtable.h"
-
-Hashtable::Hashtable(int initialSize) {
+SmartHashtable::SmartHashtable(int initialSize) {
     size = 0;
     capacity = initialSize;
 
     values = new string[capacity];
 }
 
-Hashtable::~Hashtable() {
-    delete[] values;
+SmartHashtable::~SmartHashtable() {
+    for (auto stack : values){
+        delete[] stack;
+    }
+    delete[] &values;
 }
 
-int Hashtable::hash(string key) {
+int SmartHashtable::hash(string key) {
     int result = 0;
-
+    int count = 1;
     for(auto character : key) {
-        result += character; // add unicode values together!
+        result += character*count; // add unicode values together and multply by their position
+        count++;
     }
 
     return result % capacity; // mod capacity so that the index is guaranteed to be in my table!
 
 }
 
-int Hashtable::add(string newKey) {
+int SmartHashtable::add(string newKey) {
     int result = 0;
 
     // find index of key, place value at index position in values array
@@ -42,13 +41,13 @@ int Hashtable::add(string newKey) {
     }
 
     // then write to correct position (current collision handling technique: overwrite old value...)
-    values[index] = newKey;
+    values[index]->push_back(newKey);
 
     return result; // maybe a different return value on collision?
 }
 
 // Calculate index from key, find and return that index from values array if it matches the proposed key, return an empty string otherwise.
-string Hashtable::find(string key) {
+string SmartHashtable::find(string key) {
     string result = "";
 
     // find index of key
@@ -66,7 +65,7 @@ string Hashtable::find(string key) {
     return result;
 }
 
-string Hashtable::remove(string oldKey) {
+string SmartHashtable::remove(string oldKey) {
     string result = "";
     //calculate index with hash
     int index = hash(oldKey);
@@ -86,12 +85,13 @@ string Hashtable::remove(string oldKey) {
     return result;
 }
 
-void Hashtable::print() {
+void SmartHashtable::print() {
     for(int i=0; i < capacity;i++) {
+        for (int n = values[i].size())
         cout << values[i] << ", ";
     }
     cout << endl;
 }
 
-int Hashtable::getSize() { return size; }
-int Hashtable::getCapacity() { return capacity; }
+int SmartHashtable::getSize() { return size; }
+int SmartHashtable::getCapacity() { return capacity; }

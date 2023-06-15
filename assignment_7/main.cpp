@@ -7,7 +7,15 @@ int main() {
     myHash.add("wane");
     myHash.add("anew");
     myHash.add("nawe");
+    myHash.add("a");
+    myHash.add("b");
+    myHash.add("c");
+    myHash.add("d");
+    myHash.add("");
+    myHash.add("a");
+    
 
+    
     myHash.print();
 
     cout << "end program" << endl;
