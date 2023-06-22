@@ -649,3 +649,39 @@
 [7] Found 0 cached items.
 [7] Language: en-US
 [7] Script file does not exist.
+************************************* Invoked: Fri Jun 16 22:00:30 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m64, nul
+[4] Operations sanity check succeeded.
+[4] Warning: Cannot create lock file "C:\Users\Ewan\AppData\Local\Temp\msys2-x86_64-202303181234865.lock": The process cannot access the file because it is being used by another process.
+ (0x00000020)
+[29] UnableToStart : Unable to start installer : Another msys2-x86_64-20230318 instance is already running. Wait until it finishes, close it, or restart your system.
+************************************* Invoked: Fri Jun 16 22:00:31 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, -m32, nul
+[3] Operations sanity check succeeded.
+[4] Warning: Cannot create lock file "C:\Users\Ewan\AppData\Local\Temp\msys2-x86_64-202303181234865.lock": The process cannot access the file because it is being used by another process.
+ (0x00000020)
+[24] UnableToStart : Unable to start installer : Another msys2-x86_64-20230318 instance is already running. Wait until it finishes, close it, or restart your system.
+************************************* Invoked: Fri Jun 16 22:00:31 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c17, -Wp,-v, -E, -dD, -x, c, nul
+[3] Operations sanity check succeeded.
+[3] Warning: Cannot create lock file "C:\Users\Ewan\AppData\Local\Temp\msys2-x86_64-202303181234865.lock": The process cannot access the file because it is being used by another process.
+ (0x00000020)
+[21] UnableToStart : Unable to start installer : Another msys2-x86_64-20230318 instance is already running. Wait until it finishes, close it, or restart your system.
+************************************* Invoked: Fri Jun 16 22:00:32 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m64, nul
+[3] Operations sanity check succeeded.
+[4] Warning: Cannot create lock file "C:\Users\Ewan\AppData\Local\Temp\msys2-x86_64-202303181234865.lock": The process cannot access the file because it is being used by another process.
+ (0x00000020)
+[23] UnableToStart : Unable to start installer : Another msys2-x86_64-20230318 instance is already running. Wait until it finishes, close it, or restart your system.
+************************************* Invoked: Fri Jun 16 22:00:32 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, -m32, nul
+[4] Operations sanity check succeeded.
+[4] Warning: Cannot create lock file "C:\Users\Ewan\AppData\Local\Temp\msys2-x86_64-202303181234865.lock": The process cannot access the file because it is being used by another process.
+ (0x00000020)
+[23] UnableToStart : Unable to start installer : Another msys2-x86_64-20230318 instance is already running. Wait until it finishes, close it, or restart your system.
+************************************* Invoked: Fri Jun 16 22:00:33 2023
+[0] Arguments: c:\Users\Ewan\Downloads\msys2-x86_64-20230318.exe, -std=c++17, -Wp,-v, -E, -dD, -x, c++, nul
+[3] Operations sanity check succeeded.
+[3] Warning: Cannot create lock file "C:\Users\Ewan\AppData\Local\Temp\msys2-x86_64-202303181234865.lock": The process cannot access the file because it is being used by another process.
+ (0x00000020)
+[21] UnableToStart : Unable to start installer : Another msys2-x86_64-20230318 instance is already running. Wait until it finishes, close it, or restart your system.
